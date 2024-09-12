@@ -1,0 +1,540 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'interRegular';
+    font-weight: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    height: 100%;
+    scrollbar-width: 4px;
+}
+
+a#tv-attr-logo {
+    display: none;
+}
+
+.vertical-rl {
+    writing-mode: vertical-rl;
+}
+
+.legendButton {
+    @apply w-auto border border-[#e7e9ec] border-[#414249] bg-[#f2f4fa] bg-[#111116] mx-2 text-sm flex items-center text-[#000] text-[#fff] rounded-[4px] px-[10px] py-[7px] font-[400] font-[300] mb-[8px];
+}
+.title-chart {
+    @apply p-5 border-b border-[#2F3037] text-base font-[500] dark:font-[400] uppercase;
+}
+.box-shadow-tooltip {
+    box-shadow: 3px 3px rgba(18, 18, 18, 0.08);
+}
+
+.no-scrollbar {
+    scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+    /* Light background color */
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #e7e9ec;
+    border-radius: 10px;
+    border: 1px solid #e7e9ec;
+    height: 100px;
+}
+
+/* Handle on hover */
+
+
+/* Track */
+::-webkit-scrollbar-track {
+    background-color: #1a1a20;
+    /* Dark background color */
+    border: 1px solid #1a1a20;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #2f3037;
+    border-radius: 10px;
+    border: 1px solid #2f3037;
+    height: 100px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #2f3037;
+    border-radius: 10px;
+    border: 1px solid #2f3037;
+    height: 100px;
+}
+
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50% / 80%;
+    --chart-2: 160 60% 45% / 80%;
+    --chart-3: 30 80% 55% / 80%;
+    --chart-4: 280 65% 60% / 80%;
+    --chart-5: 340 75% 55% / 80%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+.blur-protector {
+    filter: blur(10px) !important;
+}
+
+.blur-protector div {
+    pointer-events: none;
+}
+
+body {
+    background-color: #1a1a20;
+    color: #ffffff;
+}
+
+
+.tokenDetailsScroll::-webkit-scrollbar {
+    width: 8px;
+    /* Set the width of the scrollbar */
+}
+
+/* For Firefox */
+.tokenDetailsScroll {
+    scrollbar-width: thin;
+    /* Set the width of the scrollbar */
+}
+
+
+
+
+.tokenDetailsScroll::-webkit-scrollbar-thumb {
+    background-color: #22272e;
+    /* Set the color of the thumb */
+    border-radius: 6px;
+    /* Set the radius of the thumb */
+}
+
+.tokenDetailsScroll::-webkit-scrollbar-track {
+    background-color: #343a40;
+    /* Set the color of the track */
+}
+
+.tokenDetailsScroll::-webkit-scrollbar-thumb {
+    background-color: #22272e;
+    /* Set the color of the thumb */
+    border-radius: 6px;
+    /* Set the radius of the thumb */
+}
+
+
+
+.scenario-table-detail-cell.ERROR_12 {
+    background-color: rgb(247, 124, 124, 1) !important;
+}
+
+.scenario-table-detail-cell.ERROR_10 {
+    background-color: rgb(247, 124, 124, 1) !important;
+}
+
+.scenario-table-detail-cell.ERROR_8 {
+    background-color: rgba(255, 66, 66, 0.8) !important;
+}
+
+.scenario-table-detail-cell.ERROR_6 {
+    background-color: rgba(255, 66, 66, 0.6) !important;
+}
+
+.scenario-table-detail-cell.ERROR_4 {
+    background-color: rgba(255, 66, 66, 0.4) !important;
+}
+
+.scenario-table-detail-cell.ERROR_2 {
+    background-color: rgba(255, 66, 66, 0.2) !important;
+}
+
+.scenario-table-detail-cell.SUCCESS_2 {
+    background-color: rgba(29, 182, 108, 0.2) !important;
+}
+
+.scenario-table-detail-cell.SUCCESS_4 {
+    background-color: rgba(29, 182, 108, 0.4) !important;
+}
+
+.scenario-table-detail-cell.SUCCESS_6 {
+    background-color: rgba(29, 182, 108, 0.6) !important;
+}
+
+.scenario-table-detail-cell.SUCCESS_8 {
+    background-color: rgba(29, 182, 108, 0.8) !important;
+}
+
+.scenario-table-detail-cell.SUCCESS_10 {
+    background-color: rgba(29, 182, 108, 1) !important;
+}
+
+.scenario-table-detail-cell.SUCCESS_12 {
+    background-color: rgb(68, 179, 113, 1) !important;
+}
+
+.watermark {
+    z-index: 1;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    inset: 0px;
+    top: 50%;
+    left: 50%;
+    height: 61px;
+    width: 176px;
+    background-size: contain !important;
+    opacity: 0.1;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active,
+input:-webkit-autofill:focus {
+    background-color: #ffffff !important;
+    color: #555 !important;
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    -webkit-text-fill-color: #555555 !important;
+}
+
+.ai-reports {
+    h2 {
+        color: #71717a;
+        font-size: 16;
+        font-weight: 500;
+        margin: 20px 0 10px;
+    }
+
+    p {
+        font-size: 14px;
+        font-weight: 400;
+    }
+}
+
+.btn-hover:hover span {
+    opacity: 1;
+}
+
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:active,
+    input:-webkit-autofill:focus {
+        background-color: #1a1a20 !important;
+        -webkit-box-shadow: 0 0 0 1000px #1a1a20 inset !important;
+        color: #eee !important;
+        -webkit-text-fill-color: #eee !important;
+    }
+
+    .ai-reports {
+        h2 {
+            color: #a1a1aa;
+        }
+    }
+
+
+.echarts-for-react div:nth-child(2) {
+    z-index: 17 !important;
+}
+
+.carousel-card {
+    width: 400px;
+}
+
+@media only screen and (max-width: 1625px) {
+    .carousel-card {
+        width: auto;
+    }
+}
+
+.tv-lightweight-charts,
+.tv-lightweight-charts table,
+.tv-lightweight-charts table tr td:nth-child(2),
+.tv-lightweight-charts table tr td:nth-child(2) div,
+.tv-lightweight-charts table tr td:nth-child(2) div canvas {
+    width: 100% !important;
+}
+
+.chart-filter-time {
+    margin-top: -1px;
+}
+
+.chart-filter-time span {
+    color: #121212;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 10px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.chart-filter-time span.active-filter {
+    border-radius: 5px;
+    background: #ffd60a;
+}
+
+
+.success-key-test {
+    border-color: green !important;
+}
+
+.error-key-test {
+    outline: 0;
+    border-color: #ff4d4f !important;
+    animation-name: bounce;
+    animation-duration: 0.5s;
+    animation-delay: 0.25s;
+}
+
+.investment-amount-error {
+    color: #ff4d4f;
+    border-color: #ff4d4f;
+}
+
+.trading-bot-checkbox {
+    padding-left: 35px;
+
+    span {
+        width: 20px;
+        height: 20px;
+        background: #ffd60a;
+        border-radius: 4px;
+        color: #09090b;
+        padding: 2px;
+    }
+}
+
+
+/* This approximates the ease-in-out-bounce animation from easings.net, which would require a plug-in to use*/
+@keyframes bounce {
+    0% {
+        transform: translateX(0px);
+        timing-function: ease-in;
+    }
+
+    37% {
+        transform: translateX(5px);
+        timing-function: ease-out;
+    }
+
+    55% {
+        transform: translateX(-5px);
+        timing-function: ease-in;
+    }
+
+    73% {
+        transform: translateX(4px);
+        timing-function: ease-out;
+    }
+
+    82% {
+        transform: translateX(-4px);
+        timing-function: ease-in;
+    }
+
+    91% {
+        transform: translateX(2px);
+        timing-function: ease-out;
+    }
+
+    96% {
+        transform: translateX(-2px);
+        timing-function: ease-in;
+    }
+
+    100% {
+        transform: translateX(0px);
+        timing-function: ease-in;
+    }
+}
+
+.handle-sticky-position-blur {
+    top: calc(50% - 104px);
+    left: 43%;
+}
+
+@media only screen and (max-width: 1600px) {
+    .handle-sticky-position-blur {
+        left: 37%;
+    }
+}
+
+@media only screen and (max-width: 1400px) {
+    .handle-sticky-position-blur {
+        left: 35%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .handle-sticky-position-blur {
+        left: 31%;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .handle-sticky-position-blur {
+        left: 30%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .handle-sticky-position-blur {
+        left: 25%;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    .handle-sticky-position-blur {
+        left: 22%;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+    .handle-sticky-position-blur {
+        left: 17%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .handle-sticky-position-blur {
+        left: 20%;
+        width: 20%;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .handle-sticky-position-blur {
+        left: 17%;
+    }
+}
+
+@media only screen and (max-width: 370px) {
+    .handle-sticky-position-blur {
+        left: 13%;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .handle-sticky-position-blur {
+        left: 9%;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .handle-sticky-position-blur {
+        left: 13%;
+        width: 15%;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .handle-sticky-position-blur {
+        left: 3%;
+    }
+}
+
+.ai-reports a {
+    text-decoration: solid;
+    color: #ffd60a;
+}
+
+.descriptionCard a {
+    text-decoration: solid;
+    color: #ffd60a;
+}
+
+.disableChart canvas {
+    cursor: not-allowed;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+    -webkit-appearance: none;
+}
+
+div:has(div.g-recaptcha-bubble-arrow) {
+    pointer-events: auto;
+}

@@ -1,11 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Routes from './routes'
-
+import './style.css'
+import Home from './views/Home'
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(
   <React.StrictMode>
-    <Routes />
+    <nav className={'w-full sticky top-0 z-[50]  justify-center font-bold text-center bg-[hsl(var(--background))] min-h-[65px] xsl:min-h-[78px] h-[65px] xsl:h-[78px] border-b border-[#2F3037] flex items-center h-[50px]'}>STREAMIFY</nav>
+    <Home />
   </React.StrictMode>
 )
