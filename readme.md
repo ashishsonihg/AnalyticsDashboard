@@ -21,6 +21,11 @@ JSON server is available at at http://localhost:5000
 
 ===============================================
 
+Jest is also setup
+```
+npm run test
+```
+
 ## Tools Included in this Project
 
 The intention is to provide a basic, but comprehensive, skeleton for React projects. The tools included are:
