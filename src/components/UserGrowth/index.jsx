@@ -9,94 +9,9 @@ import {
   CardTitle
 } from '../ui/card'
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '../ui/chart'
+import { useSelector } from "react-redux";
 
 export const description = 'A multiple line chart'
-const chartData = [
-  {
-    month: 'Oct 23',
-    allUsers: 103,
-    activeUsers: 92,
-    premium: 20,
-    premiumPlus: 10
-  },
-  {
-    month: 'Nov 23',
-    allUsers: 108,
-    activeUsers: 99,
-    premium: 25,
-    premiumPlus: 12
-  },
-  {
-    month: 'Dec 23',
-    allUsers: 113,
-    activeUsers: 105,
-    premium: 24,
-    premiumPlus: 13
-  },
-  {
-    month: 'Jan 24',
-    allUsers: 119,
-    activeUsers: 112,
-    premium: 24,
-    premiumPlus: 13
-  },
-  {
-    month: 'Feb 24',
-    allUsers: 125,
-    activeUsers: 118,
-    premium: 20,
-    premiumPlus: 10
-  },
-  {
-    month: 'Mar 24',
-    allUsers: 129,
-    activeUsers: 115,
-    premium: 29,
-    premiumPlus: 14
-  },
-  {
-    month: 'Apr 24',
-    allUsers: 140,
-    activeUsers: 117,
-    premium: 30,
-    premiumPlus: 15
-  },
-  {
-    month: 'May 24',
-    allUsers: 145,
-    activeUsers: 125,
-    premium: 32,
-    premiumPlus: 16
-  },
-  {
-    month: 'Jun 24',
-    allUsers: 151,
-    activeUsers: 132,
-    premium: 30,
-    premiumPlus: 15
-  },
-  {
-    month: 'Jul 24',
-    allUsers: 152,
-    activeUsers: 137,
-    premium: 36,
-    premiumPlus: 18
-  },
-  {
-    month: 'Aug 24',
-    allUsers: 159,
-    activeUsers: 141,
-    premium: 38,
-    premiumPlus: 19
-  },
-  {
-    month: 'Sep 24',
-    allUsers: 169,
-    activeUsers: 148,
-    premium: 40,
-    premiumPlus: 21
-  }
-]
 
 const chartConfig = {
   allUsers: {
@@ -118,6 +33,17 @@ const chartConfig = {
 }
 
 export default () => {
+  const {
+    data = [],
+  } = useSelector(
+    ({
+      analytics: {
+        users: data
+      } = {}
+    }) => ({
+      data
+    })
+  );
   return (
     <Card className='flex flex-col w-full'>
       <CardHeader className='items-center border-b'>
@@ -127,7 +53,7 @@ export default () => {
         <ChartContainer config={chartConfig} className={'max-h-[400px] w-full'}>
           <LineChart
             accessibilityLayer
-            data={chartData}
+            data={data}
             margin={{
               left: -20,
               right: 12

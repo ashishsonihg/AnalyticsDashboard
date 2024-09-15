@@ -9,41 +9,8 @@ import {
   CardTitle
 } from '../ui/card'
 import { ChartContainer, ChartTooltip, ChartTooltipContent,  } from '../ui/chart'
-;[]
-const chartData = [
-  {
-    id: 'song-1',
-    songTitle: 'Blinding Lights The Weeknd',
-    plays: 4440817906,
-    fill: 'hsl(var(--chart-1))'
-  },
-  {
-    id: 'song-2',
-    songTitle: 'Shape of You Ed Sheeran',
-    plays: 4005235240,
-    fill: 'hsl(var(--chart-2))'
-  },
-  {
-    id: 'song-3',
-    songTitle: 'Someone You Loved Lewis Capaldi',
-    plays: 3569805790,
-    fill: 'hsl(var(--chart-3))'
-  },
-  {
-    id: 'song-4',
-    songTitle: 'As It Was Harry Styles',
-    plays: 3525969965,
-    fill: 'hsl(var(--chart-4))'
-  },
-  {
-    id: 'song-5',
-    songTitle: 'Perfect Ed Sheeran',
-    plays: 3225969965,
-    fill: 'hsl(var(--chart-5))'
-  }
-]
-
-// add support for billion in the below function
+import { useSelector } from "react-redux";
+import React, { useMemo } from 'react';
 
 const formatNumber = (num) => {
   // If the number is greater than or equal to 1 million
@@ -62,12 +29,26 @@ const formatNumber = (num) => {
   // For numbers below 1 thousand, return the number as it is
   return num.toString();
 }
-const chartConfig = chartData.reduce((acc, post) => {
-  let { id, songTitle, fill } = post
-  return { ...acc, [id]: { ...(acc[id] || {}), label: songTitle, color: fill } }
-}, {})
-console.log(chartConfig)
+
 export default () => {
+  const {
+    data,
+  } = useSelector(
+    ({
+      analytics: {
+        topSongs: data
+      } = {}
+    }) => ({
+      data
+    })
+  );
+  const chartData = React.useMemo(() => {
+    return (data ||[]).map((row, index) => ({...row, fill: `hsl(var(--chart-${index+1}))`}))
+  }, [data])
+  const chartConfig = chartData.reduce((acc, post) => {
+    let { id, songTitle, fill } = post
+    return { ...acc, [id]: { ...(acc[id] || {}), label: songTitle, color: fill } }
+  }, {})
   return (
     <Card className='flex flex-col w-full'>
       <CardHeader className='items-center border-b'>

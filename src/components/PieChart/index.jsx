@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { TrendingUp } from 'lucide-react'
 import { Label, Pie, PieChart } from 'recharts'
+import { useSelector } from "react-redux";
 
 import {
   Card,
@@ -11,12 +12,12 @@ import {
 } from '../ui/card'
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from '../ui/chart'
 
-const chartData = [
-  { source: 'advertising', revenue: 59, fill: 'var(--color-advertising)' },
-  { source: 'subscription', revenue: 42, fill: 'var(--color-subscription)' },
-  { source: 'liveEvents', revenue: 26, fill: 'var(--color-liveEvents)' },
-  { source: 'royalty', revenue: 12, fill: 'var(--color-royalty)' }
-]
+// const chartData = [
+//   { source: 'advertising', revenue: 59, fill: 'var(--color-advertising)' },
+//   { source: 'subscription', revenue: 42, fill: 'var(--color-subscription)' },
+//   { source: 'liveEvents', revenue: 26, fill: 'var(--color-liveEvents)' },
+//   { source: 'royalty', revenue: 12, fill: 'var(--color-royalty)' }
+// ]
 
 const chartConfig = {
   revenue: {
@@ -41,9 +42,28 @@ const chartConfig = {
 }
 
 export default () => {
+  const {
+    data ,
+  } = useSelector(
+    ({
+      analytics: {
+        revenue: data
+      } = {}
+    }) => ({
+      data
+    })
+  );
+  const chartData = React.useMemo(() => {
+    return (data ||[]).map((row) => ({...row, fill: `var(--color-${row.source})`}))
+  }, [data])
+  
+  // console.log("chartData:" ,chartData, data)
   const totalRevenue = React.useMemo(() => {
-    return chartData.reduce((acc, curr) => acc + curr.revenue, 0)
-  }, [])
+    return chartData.reduce((acc, curr) => {
+      console.log(curr)
+    return  acc + curr.revenue
+    }, 0)
+  }, [data])
 
   return (
     <Card className='flex flex-col w-full'>

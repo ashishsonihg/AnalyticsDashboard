@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   CaretSortIcon,
-  ChevronDownIcon,
   DotsHorizontalIcon
 } from '@radix-ui/react-icons'
 import {
@@ -14,13 +13,11 @@ import {
 } from '@tanstack/react-table'
 
 import { Button } from '../ui/button'
-import { mockData as data } from './mockData'
+// import { mockData as data } from './mockData'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger
 } from '../ui/dropdown-menu'
 import { Input } from '../ui/input'
@@ -155,6 +152,11 @@ export default () => {
   const [columnFilters, setColumnFilters] = useState([])
   const [columnVisibility, setColumnVisibility] = useState({})
   const [rowSelection, setRowSelection] = useState({})
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    fetch("/songs").then((response) => response.json()).then((data) => setData(data));
+  }, [])
 
   const table = useReactTable({
     data,
