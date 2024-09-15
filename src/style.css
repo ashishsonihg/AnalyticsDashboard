@@ -21,7 +21,9 @@ body {
     font-family: 'Inter', sans-serif;
     width: 100%;
     height: 100%;
-    scrollbar-width: 4px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
 }
 
 a#tv-attr-logo {
@@ -35,9 +37,8 @@ a#tv-attr-logo {
 .legendButton {
     @apply w-auto border border-[#e7e9ec] border-[#414249] bg-[#f2f4fa] bg-[#111116] mx-2 text-sm flex items-center text-[#000] text-[#fff] rounded-[4px] px-[10px] py-[7px] font-[400] font-[300] mb-[8px];
 }
-.title-chart {
-    @apply p-5 border-b border-[#2F3037] text-base font-[500] dark:font-[400] uppercase;
-}
+
+
 .box-shadow-tooltip {
     box-shadow: 3px 3px rgba(18, 18, 18, 0.08);
 }
@@ -59,15 +60,11 @@ a#tv-attr-logo {
 }
 
 ::-webkit-scrollbar {
-    width: 4px;
-    height: 10px;
+    display: none;
 }
 
-::-webkit-scrollbar-track {
-    background-color: #ffffff;
-    /* Light background color */
-    border: 1px solid #ffffff;
-    border-radius: 10px;
+::-webkit-scrollbar-button {
+    display: none;
 }
 
 /* Handle */
@@ -76,6 +73,7 @@ a#tv-attr-logo {
     border-radius: 10px;
     border: 1px solid #e7e9ec;
     height: 100px;
+    display: hidden;
 }
 
 /* Handle on hover */
@@ -106,42 +104,44 @@ a#tv-attr-logo {
 
 
 @layer base {
-  :root {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50% / 80%;
-    --chart-2: 160 60% 45% / 80%;
-    --chart-3: 30 80% 55% / 80%;
-    --chart-4: 280 65% 60% / 80%;
-    --chart-5: 340 75% 55% / 80%;
-  }
+    :root {
+        --background: 222.2 84% 4.9%;
+        --foreground: 210 40% 98%;
+        --card: 222.2 84% 4.9%;
+        --card-foreground: 210 40% 98%;
+        --popover: 222.2 84% 4.9%;
+        --popover-foreground: 210 40% 98%;
+        --primary: 210 40% 98%;
+        --primary-foreground: 222.2 47.4% 11.2%;
+        --secondary: 217.2 32.6% 17.5%;
+        --secondary-foreground: 210 40% 98%;
+        --muted: 217.2 32.6% 17.5%;
+        --muted-foreground: 215 20.2% 65.1%;
+        --accent: 217.2 32.6% 17.5%;
+        --accent-foreground: 210 40% 98%;
+        --destructive: 0 62.8% 30.6%;
+        --destructive-foreground: 210 40% 98%;
+        --border: 217.2 32.6% 17.5%;
+        --input: 217.2 32.6% 17.5%;
+        --ring: 212.7 26.8% 83.9%;
+        --chart-1: 220 70% 50% / 80%;
+        --chart-2: 160 60% 45% / 80%;
+        --chart-3: 30 80% 55% / 80%;
+        --chart-4: 280 65% 60% / 80%;
+        --chart-5: 340 75% 55% / 80%;
+    }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
 }
+
 @layer base {
     * {
         @apply border-border;
@@ -291,21 +291,21 @@ input:-webkit-autofill:focus {
 }
 
 
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover,
-    input:-webkit-autofill:active,
-    input:-webkit-autofill:focus {
-        background-color: #1a1a20 !important;
-        -webkit-box-shadow: 0 0 0 1000px #1a1a20 inset !important;
-        color: #eee !important;
-        -webkit-text-fill-color: #eee !important;
-    }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:active,
+input:-webkit-autofill:focus {
+    background-color: #1a1a20 !important;
+    -webkit-box-shadow: 0 0 0 1000px #1a1a20 inset !important;
+    color: #eee !important;
+    -webkit-text-fill-color: #eee !important;
+}
 
-    .ai-reports {
-        h2 {
-            color: #a1a1aa;
-        }
+.ai-reports {
+    h2 {
+        color: #a1a1aa;
     }
+}
 
 
 .echarts-for-react div:nth-child(2) {
