@@ -1,6 +1,5 @@
-# React based Housing Sales Application
+# React based Analytics Dashboard
 
-**Note:** Node v6+ is required for this project.
 
 We recommend using [yarn](https://code.facebook.com/posts/1840075619545360) to manage dependencies. To begin using yarn, install globally with `npm install -g yarn`.
 
@@ -13,6 +12,12 @@ yarn
 ```
 
 By default, the site is available at http://localhost:3000
+```
+npm run start
+```
+this starts both react app and json Server
+
+JSON server is available at at http://localhost:5000
 
 ===============================================
 
@@ -22,11 +27,14 @@ The intention is to provide a basic, but comprehensive, skeleton for React proje
 
 - React (of course)
 - Redux (state management)
+- TailwindCSS
 - React Router (routing)
 - Stylelint and eslint (modified AirBnB)
 - Jest (testing)
+- JSON Server
+- Shadcn and recharts
 
-All of these are currently mainstream tools for building modern JavaScript applications, however, it may be useful to discuss the rationale for the inclusion of some of these tools.
+
 
 #### Redux
 Redux is both a library and an architecture. It is influenced by Flux, Immutable.js and other prior work. Dan Abramov, the creator of Redux, posted a response on [Stack Overflow](http://stackoverflow.com/questions/32461229/why-use-redux-over-facebook-flux) about how/why Redux may be preferred over Flux. It provides valuable insight into the major benefits of Redux.
